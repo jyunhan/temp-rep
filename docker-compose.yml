@@ -1,0 +1,41 @@
+version: '3'
+services:
+  #postgres:
+  #  image: 'postgres:latest'
+  # redis:
+  #   image: redis:alpine
+  #   deploy:
+  #     restart_policy:
+  #       condition: on-failure
+  #       delay: 5s
+  #       max_attempts: 3
+  #       window: 120s
+  nginx:
+    restart: always
+    build:
+      dockerfile: Dockerfile.dev
+      context: ./nginx
+    ports:
+      - '80:80'
+  neo4j:
+    image: 'd3bc45377fd7' # neo4j:latest'
+    ports:
+      - '7474:7474'
+      - '7687:7687'
+  # api:
+  #   build:
+  #     dockerfile: Dockerfile.dev
+  #     context: ./api
+  #   volumes:
+  #     - /app/node_modules
+  #     - ./api:/app
+  ssr-frontend:
+    build:
+      dockerfile: Dockerfile.dev
+      context: ./ssr-frontend
+    volumes:
+      - /app/node_modules
+      - ./ssr-frontend:/app
+    # environment:
+    #   - ENV_PARA1=redis
+    #   - ENV_PARA2=6379

@@ -1,0 +1,5 @@
+myresume.pem
+dist
+*.wasm
+*.wasm.map
+*.asm.js

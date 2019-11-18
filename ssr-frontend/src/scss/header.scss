@@ -1,0 +1,26 @@
+#header {
+  background-color: #FFF;
+  display: grid;
+  grid-template-columns: repeat(10, 1fr);
+  place-items: center;
+  border-bottom: 1px solid darkgray;
+
+  div:hover {
+    cursor: pointer;
+    font-size: 20px;
+  }
+
+  &, ul {
+    height: 10vh;
+  }
+
+  .mediawindow {
+    grid-column-start: 9;
+    grid-column-end: 9;
+  }
+
+  .login {
+    grid-column-start: 10;
+    grid-column-end: 10;
+  }
+}

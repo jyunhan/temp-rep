@@ -1,0 +1,7 @@
+**/node_modules
+**/build
+**/dist
+**/temp
+**/*.pem
+**/.DS_Store
+ssr-frontend/public

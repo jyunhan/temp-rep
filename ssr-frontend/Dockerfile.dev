@@ -1,0 +1,8 @@
+FROM node:12.13.0
+LABEL Describe='This is a dockerfile to build project'
+WORKDIR /app
+COPY package.json ./
+RUN npm install
+COPY public ./public
+COPY server.js ./
+CMD [ "npm", "run", "production"]
